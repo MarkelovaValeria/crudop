@@ -86,7 +86,7 @@ public class CourseArchitectureTests {
     void controllersDependencies() {
         classes().that().resideInAPackage("..controller..")
                 .should().onlyDependOnClassesThat()
-                .resideInAnyPackage("..service..", "..model..", "java..", "javax..",
+                .resideInAnyPackage("..service..", "..model..", "..request..", "java..", "javax..",
                         "org.springframework..", "lombok..")
                 .check(importedClasses);
     }
@@ -95,7 +95,7 @@ public class CourseArchitectureTests {
     void servicesDependencies() {
         classes().that().resideInAPackage("..service..")
                 .should().onlyDependOnClassesThat()
-                .resideInAnyPackage("..service..", "..repository..", "..model..", "java..",
+                .resideInAnyPackage("..service..", "..repository..", "..model..", "..request..", "java..",
                         "javax..", "org.springframework..", "jakarta.annotation..", "lombok..")
                 .check(importedClasses);
     }
